@@ -31,7 +31,7 @@
   
   /* Navbar specific colors */
   --ifm-navbar-background-color: #220f2d;
-  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-color: #371a45;
   
   /* Code styling */
   --ifm-code-font-size: 95%;
@@ -71,16 +71,15 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: transparent !important;
   -webkit-backdrop-filter: none !important;
   backdrop-filter: none !important;
   box-shadow: none !important;
   border-bottom: none !important;
+  background: rgba(255, 255, 255, 0.8)
 }
 
 /* When scrolled, add a background to the navbar */
 .homepage-navbar.navbar-scrolled {
-  background: rgba(34, 15, 45, 0.95) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   backdrop-filter: blur(10px) !important;
   box-shadow: 0 2px 4px rgba(34, 15, 45, 0.2) !important;
@@ -88,7 +87,7 @@
 }
 
 /* Dark theme scrolled navbar */
-[data-theme='dark'] .homepage-navbar.navbar-scrolled {
+[data-theme='dark'] .homepage-navbar {
   background: rgba(55, 26, 69, 0.95) !important;
 }
 

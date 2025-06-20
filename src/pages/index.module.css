@@ -6,7 +6,7 @@
 .heroBanner {
   z-index: -1000;
   /* Use your hero image as the background */
-  background-image: url("/img/hero_simple.svg");
+  background-image: url("/img/hero_planets_light.svg");
 
   /* --- MODIFIED PROPERTIES --- */
 
@@ -38,6 +38,11 @@
   /* Ensure content starts from the top of viewport */
   margin-top: 0;
   padding-top: 0;
+}
+
+[data-theme='dark'] .heroBanner {
+  /* Dark theme background */
+  background-image: url("/img/hero_planets_dark.svg");
 }
 
 .heroBanner::before {

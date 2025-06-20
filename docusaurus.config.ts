@@ -7,7 +7,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "MATTHEW HOLDEN",
   tagline: "Dad",
-  favicon: "img/favicon.png",
+  favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -76,7 +76,7 @@ const config: Config = {
       title: "Heisenberg's Uncertainty",
       logo: {
         alt: "Matthew Holden Logo",
-        src: "img/favicon.png",
+        src: "img/favicon.ico",
       },
       items: [
         {

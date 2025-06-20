@@ -15,10 +15,10 @@ function HomepageHeader() {
     <header className={clsx("hero", styles.heroBanner, "homepage-hero-container")}>
       <div className="container">
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "400px" }}>
-          <Heading as="h1" className="hero__title">
+          <Heading as="h1" className="hero__title ">
             {siteConfig.title}
           </Heading>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", alignContent: "space-between", "height": "2vh"}}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", alignContent: "space-between",}}>
           <p className="hero__subtitle">{siteConfig.tagline}</p>  
           <p className="hero__subtitle">Developer</p>  
           <p className="hero__subtitle">DnD Enthusiast</p>  
