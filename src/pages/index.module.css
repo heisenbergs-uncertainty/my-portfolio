@@ -1,0 +1,83 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  z-index: -1000;
+  /* Use your hero image as the background */
+  background-image: url("/img/hero_simple.svg");
+
+  /* --- MODIFIED PROPERTIES --- */
+
+  /* Set the height to 100% of the viewport height */
+  max-height: 100vh;
+  min-height: 100vh;
+
+  /* Display the entire image without cropping */
+  background-size: cover;
+
+  /* Center the background image */
+  background-position: center;
+
+  /* Do not repeat the image */
+  background-repeat: no-repeat;
+
+  /* --- END OF MODIFIED PROPERTIES --- */
+
+  /* Flexbox styles to center the content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Add a subtle overlay to make the text more readable */
+  position: relative;
+  color: white; /* Change text color to white for better contrast */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Add a shadow to the text */
+  
+  /* Ensure content starts from the top of viewport */
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* We make the overlay much lighter so the image details are visible */
+  z-index: 1;
+}
+
+/* Ensure the content is above the overlay */
+.heroBanner .container {
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (max-width: 996px) {
+  .hero-banner-container {
+    /* On smaller screens, a full-height hero is often too tall.
+       Let's reduce its height. You can adjust this value as you see fit. */
+    height: 75vh;
+  }
+
+  .hero__title {
+    /* The default title font size (4rem) is very large on mobile.
+       We'll reduce it significantly for better readability. */
+    font-size: 2.25rem;
+  }
+
+  .hero__subtitle {
+    /* We will also scale down the subtitle to match the new title size. */
+    font-size: 1.1rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

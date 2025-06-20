@@ -1,0 +1,150 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* Brand theme colors */
+  --brand-dark-purple: #220f2d;
+  --brand-blue: #22a7f0;
+  --brand-medium-purple: #371a45;
+  --brand-white: #ffffff;
+  
+  /* Primary color scheme using brand blue */
+  --ifm-color-primary: #22a7f0;
+  --ifm-color-primary-dark: #1e96d9;
+  --ifm-color-primary-darker: #1c8dcd;
+  --ifm-color-primary-darkest: #1774a9;
+  --ifm-color-primary-light: #35b2f2;
+  --ifm-color-primary-lighter: #41b6f3;
+  --ifm-color-primary-lightest: #60c3f5;
+  
+  /* Background colors */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8f9fa;
+  
+  /* Text colors */
+  --ifm-color-content: #220f2d;
+  --ifm-color-content-secondary: #371a45;
+  
+  /* Navbar specific colors */
+  --ifm-navbar-background-color: #220f2d;
+  --ifm-navbar-link-color: #ffffff;
+  
+  /* Code styling */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(34, 167, 240, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  /* Dark theme using lighter brand blue variants */
+  --ifm-color-primary: #35b2f2;
+  --ifm-color-primary-dark: #22a7f0;
+  --ifm-color-primary-darker: #1e96d9;
+  --ifm-color-primary-darkest: #1c8dcd;
+  --ifm-color-primary-light: #41b6f3;
+  --ifm-color-primary-lighter: #4eb9f3;
+  --ifm-color-primary-lightest: #60c3f5;
+  
+  /* Dark theme backgrounds */
+  --ifm-background-color: #220f2d;
+  --ifm-background-surface-color: #371a45;
+  
+  /* Dark theme text */
+  --ifm-color-content: #ffffff;
+  --ifm-color-content-secondary: rgba(255, 255, 255, 0.8);
+  
+  /* Dark theme navbar */
+  --ifm-navbar-background-color: #371a45;
+  --ifm-navbar-link-color: #ffffff;
+  
+  --docusaurus-highlighted-code-line-bg: rgba(34, 167, 240, 0.3);
+}
+
+/* Homepage navbar customizations */
+.homepage-navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+/* When scrolled, add a background to the navbar */
+.homepage-navbar.navbar-scrolled {
+  background: rgba(34, 15, 45, 0.95) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 4px rgba(34, 15, 45, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Dark theme scrolled navbar */
+[data-theme='dark'] .homepage-navbar.navbar-scrolled {
+  background: rgba(55, 26, 69, 0.95) !important;
+}
+
+/* Homepage navbar links styling */
+.homepage-navbar .navbar__link {
+  color: white !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+  text-decoration-thickness: 2px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* When navbar is scrolled, change link colors */
+.homepage-navbar.navbar-scrolled .navbar__link {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+/* Homepage navbar logo and title */
+.homepage-navbar .navbar__brand {
+  color: white !important;
+}
+
+.homepage-navbar.navbar-scrolled .navbar__brand {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+/* Homepage navbar toggle (mobile menu) */
+.homepage-navbar .navbar__toggle {
+  color: white !important;
+}
+
+.homepage-navbar.navbar-scrolled .navbar__toggle {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+/* Ensure hero content is not hidden behind fixed navbar */
+.homepage-hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover effects for homepage navbar links */
+.homepage-navbar .navbar__link:hover {
+  text-decoration-color: #22a7f0 !important;
+  color: #22a7f0 !important;
+}
+
+/* GitHub link styling for homepage */
+.homepage-navbar .navbar__item--right .navbar__link {
+  color: white !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+  text-decoration-thickness: 2px !important;
+}
+
+.homepage-navbar.navbar-scrolled .navbar__item--right .navbar__link {
+  color: var(--ifm-navbar-link-color) !important;
+}
