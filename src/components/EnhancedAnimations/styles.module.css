@@ -1,0 +1,23 @@
+.skillTag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  background: rgba(34, 167, 240, 0.1);
+  border: 1px solid rgba(34, 167, 240, 0.3);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+  transition: all 0.3s ease;
+}
+
+.skillTag:hover {
+  background: rgba(34, 167, 240, 0.2);
+  border-color: var(--ifm-color-primary);
+}
+
+.floatingElement {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+}
