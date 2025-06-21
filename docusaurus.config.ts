@@ -83,9 +83,10 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Portfolio",
+          label: "Docs",
         },
         { to: "/blog", label: "Blog", position: "left" },
+        { to: "/portfolio", label: "Portfolio", position: "left" },
         {
           href: "https://github.com/heisenbergs-uncertainty",
           label: "GitHub",

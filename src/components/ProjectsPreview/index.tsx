@@ -15,6 +15,14 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: 'Apache StreamPipes',
+    description: 'Open-source industrial IoT stream processing platform for real-time data analytics and pipeline management.',
+    technologies: ['Java', 'Angular', 'Apache Kafka', 'Docker', 'TypeScript'],
+    github: 'https://github.com/apache/streampipes',
+    link: 'https://streampipes.apache.org',
+    image: '/img/hero_simple.svg',
+  },
+  {
     title: 'Computational Physics Simulator',
     description: 'Advanced physics simulation engine built with Python and NumPy for modeling complex particle interactions and wave dynamics.',
     technologies: ['Python', 'NumPy', 'Matplotlib', 'Jupyter'],
@@ -27,13 +35,6 @@ const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'D3.js', 'WebSocket'],
     github: 'https://github.com/heisenbergs-uncertainty/react-dashboard',
     link: 'https://dashboard-demo.example.com',
-    image: '/img/hero_simple.svg',
-  },
-  {
-    title: 'D&D Campaign Manager',
-    description: 'Digital tool for Dungeon Masters to manage campaigns, track player progress, and generate dynamic encounters.',
-    technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'Tailwind'],
-    github: 'https://github.com/heisenbergs-uncertainty/dnd-manager',
     image: '/img/hero_simple.svg',
   },
 ];
@@ -103,7 +104,7 @@ export default function ProjectsPreview(): ReactNode {
         <div className={styles.viewAllContainer}>
           <Link
             className={clsx('button button--primary button--lg', styles.viewAllButton)}
-            to="/docs/intro"
+            to="/portfolio"
           >
             View All Projects
           </Link>
