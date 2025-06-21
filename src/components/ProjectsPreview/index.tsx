@@ -20,7 +20,7 @@ const projects: Project[] = [
     technologies: ['Java', 'Angular', 'Apache Kafka', 'Docker', 'TypeScript'],
     github: 'https://github.com/apache/streampipes',
     link: 'https://streampipes.apache.org',
-    image: '/img/hero_simple.svg',
+    image: '/img/apache-streampipes-logo.svg',
   },
   {
     title: 'Computational Physics Simulator',

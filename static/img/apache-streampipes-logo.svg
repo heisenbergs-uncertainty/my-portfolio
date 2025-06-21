@@ -1,0 +1,47 @@
+<svg width="400" height="100" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Apache StreamPipes Logo Recreation -->
+  
+  <!-- StreamPipes "S" logo -->
+  <g transform="translate(10, 10)">
+    <!-- Outer circle background -->
+    <circle cx="40" cy="40" r="35" fill="#2C3E82" stroke="#4A5F9A" stroke-width="2"/>
+    
+    <!-- Inner "S" shape -->
+    <path d="M20 25 Q30 15 45 25 Q60 35 50 45 Q40 55 25 45 Q10 35 20 25" 
+          fill="none" stroke="#4CAF50" stroke-width="6" stroke-linecap="round"/>
+    <path d="M30 55 Q40 45 55 55 Q70 65 60 75 Q50 85 35 75 Q20 65 30 55" 
+          fill="none" stroke="#4CAF50" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- Connecting pipe -->
+    <rect x="35" y="42" width="10" height="16" fill="#4CAF50" rx="2"/>
+  </g>
+  
+  <!-- "apache" text -->
+  <g transform="translate(100, 20)">
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#2C3E82">apache</text>
+  </g>
+  
+  <!-- "StreamPipes" text -->
+  <g transform="translate(100, 45)">
+    <!-- "Stream" in blue -->
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="28" font-weight="500" fill="#2C3E82">Stream</text>
+    <!-- "pipes" in green -->
+    <text x="95" y="25" font-family="Arial, sans-serif" font-size="28" font-weight="500" fill="#4CAF50">pipes</text>
+  </g>
+  
+  <!-- Data flow visualization -->
+  <g transform="translate(300, 30)" opacity="0.6">
+    <!-- Data points -->
+    <circle cx="5" cy="10" r="2" fill="#2C3E82"/>
+    <circle cx="15" cy="15" r="2" fill="#4CAF50"/>
+    <circle cx="25" cy="8" r="2" fill="#2C3E82"/>
+    <circle cx="35" cy="18" r="2" fill="#4CAF50"/>
+    
+    <!-- Flow lines -->
+    <path d="M5 10 Q15 15 25 8 Q35 18 45 12" stroke="#4CAF50" stroke-width="1" fill="none" opacity="0.7"/>
+    
+    <!-- Pipeline representation -->
+    <rect x="50" y="10" width="20" height="4" rx="2" fill="#2C3E82" opacity="0.8"/>
+    <rect x="75" y="12" width="15" height="8" rx="2" fill="#4CAF50" opacity="0.8"/>
+  </g>
+</svg>

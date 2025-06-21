@@ -31,7 +31,7 @@ const projects: Project[] = [
     timeline: '2023 - Present',
     github: 'https://github.com/apache/streampipes',
     link: 'https://streampipes.apache.org',
-    image: '/img/streampipes-logo.svg',
+    image: '/img/apache-streampipes-logo.svg',
     highlights: [
       'Implemented advanced data adapter framework supporting 15+ industrial protocols (OPC-UA, MQTT, Modbus)',
       'Architected microservice-based pipeline execution engine with 40% performance improvement',
