@@ -110,11 +110,11 @@
 
 .heroContent {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: 1fr 2fr;
+  align-items: space-between;
+  max-width: 100vw;
+  padding-top: 13vh;
+  
 }
 
 /* Hero Text Styles */
@@ -239,7 +239,6 @@
   line-height: 1.7;
   margin-bottom: 3rem;
   color: rgba(255, 255, 255, 0.95);
-  max-width: 500px;
   animation: fadeIn 0.8s ease-out 1s both;
 }
 

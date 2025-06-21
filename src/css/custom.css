@@ -175,53 +175,106 @@ table {
   backdrop-filter: none !important;
   box-shadow: none !important;
   border-bottom: none !important;
-  background: rgba(255, 255, 255, 0.8)
+  background: rgba(255, 255, 255, 0.95) !important;
+  transition: all 0.3s ease !important;
 }
 
-/* When scrolled, add a background to the navbar */
+/* When scrolled, add a stronger background to the navbar */
 .homepage-navbar.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   backdrop-filter: blur(10px) !important;
-  box-shadow: 0 2px 4px rgba(34, 15, 45, 0.2) !important;
+  box-shadow: 0 2px 4px rgba(34, 15, 45, 0.15) !important;
   transition: all 0.3s ease !important;
+}
+
+/* Dark theme navbar */
+[data-theme='dark'] .homepage-navbar {
+  background: rgba(55, 26, 69, 0.1) !important;
 }
 
 /* Dark theme scrolled navbar */
-[data-theme='dark'] .homepage-navbar {
+[data-theme='dark'] .homepage-navbar.navbar-scrolled {
   background: rgba(55, 26, 69, 0.95) !important;
 }
 
-/* Homepage navbar links styling */
-.homepage-navbar .navbar__link {
-  color: white !important;
-  font-weight: 500 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 4px !important;
-  text-decoration-thickness: 2px !important;
+/* Homepage navbar links styling - use brand colors for visibility */
+.homepage-navbar .navbar__link,
+.homepage-navbar .navbar__item .navbar__link {
+  color: var(--brand-dark-purple) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
   transition: all 0.3s ease !important;
 }
 
-/* When navbar is scrolled, change link colors */
-.homepage-navbar.navbar-scrolled .navbar__link {
-  color: var(--ifm-navbar-link-color) !important;
+/* When navbar is scrolled, maintain the same contrast */
+.homepage-navbar.navbar-scrolled .navbar__link,
+.homepage-navbar.navbar-scrolled .navbar__item .navbar__link {
+  color: var(--brand-dark-purple) !important;
+  text-shadow: none !important;
+}
+
+/* Dark theme navbar links */
+[data-theme='dark'] .homepage-navbar .navbar__link,
+[data-theme='dark'] .homepage-navbar .navbar__item .navbar__link {
+  color: #35b2f2 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__link,
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__item .navbar__link {
+  color: white !important;
+  text-shadow: none !important;
 }
 
 /* Homepage navbar logo and title */
-.homepage-navbar .navbar__brand {
-  color: white !important;
+.homepage-navbar .navbar__brand,
+.homepage-navbar .navbar__brand .navbar__title {
+  color: var(--brand-dark-purple) !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
 }
 
-.homepage-navbar.navbar-scrolled .navbar__brand {
-  color: var(--ifm-navbar-link-color) !important;
+.homepage-navbar.navbar-scrolled .navbar__brand,
+.homepage-navbar.navbar-scrolled .navbar__brand .navbar__title {
+  color: var(--brand-dark-purple) !important;
+  text-shadow: none !important;
+}
+
+/* Dark theme navbar brand */
+[data-theme='dark'] .homepage-navbar .navbar__brand,
+[data-theme='dark'] .homepage-navbar .navbar__brand .navbar__title {
+  color: #35b2f2 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__brand,
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__brand .navbar__title {
+  color: white !important;
+  text-shadow: none !important;
 }
 
 /* Homepage navbar toggle (mobile menu) */
 .homepage-navbar .navbar__toggle {
-  color: white !important;
+  color: var(--brand-dark-purple) !important;
+  filter: none !important;
 }
 
 .homepage-navbar.navbar-scrolled .navbar__toggle {
-  color: var(--ifm-navbar-link-color) !important;
+  color: var(--brand-dark-purple) !important;
+  filter: none !important;
+}
+
+/* Dark theme navbar toggle */
+[data-theme='dark'] .homepage-navbar .navbar__toggle {
+  color: #35b2f2 !important;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5)) !important;
+}
+
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__toggle {
+  color: white !important;
+  filter: none !important;
 }
 
 /* Ensure hero content is not hidden behind fixed navbar */
@@ -231,19 +284,139 @@ table {
 }
 
 /* Hover effects for homepage navbar links */
-.homepage-navbar .navbar__link:hover {
-  text-decoration-color: #22a7f0 !important;
+.homepage-navbar .navbar__link:hover,
+.homepage-navbar .navbar__item .navbar__link:hover {
+  color: var(--brand-blue) !important;
+  transform: translateY(-1px) !important;
+  text-shadow: none !important;
+}
+
+.homepage-navbar.navbar-scrolled .navbar__link:hover,
+.homepage-navbar.navbar-scrolled .navbar__item .navbar__link:hover {
+  color: var(--brand-blue) !important;
+  text-shadow: none !important;
+}
+
+/* Dark theme hover effects */
+[data-theme='dark'] .homepage-navbar .navbar__link:hover,
+[data-theme='dark'] .homepage-navbar .navbar__item .navbar__link:hover {
   color: #22a7f0 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__link:hover,
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__item .navbar__link:hover {
+  color: #22a7f0 !important;
+  text-shadow: none !important;
 }
 
 /* GitHub link styling for homepage */
 .homepage-navbar .navbar__item--right .navbar__link {
+  color: var(--brand-dark-purple) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px !important;
+  background: rgba(34, 167, 240, 0.1) !important;
+  border: 1px solid rgba(34, 167, 240, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.homepage-navbar .navbar__item--right .navbar__link:hover {
   color: white !important;
-  text-decoration: underline !important;
-  text-underline-offset: 4px !important;
-  text-decoration-thickness: 2px !important;
+  background: var(--brand-blue) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(34, 167, 240, 0.3) !important;
 }
 
 .homepage-navbar.navbar-scrolled .navbar__item--right .navbar__link {
+  color: var(--brand-dark-purple) !important;
+  background: rgba(34, 167, 240, 0.1) !important;
+  text-shadow: none !important;
+}
+
+.homepage-navbar.navbar-scrolled .navbar__item--right .navbar__link:hover {
+  color: white !important;
+  background: var(--brand-blue) !important;
+}
+
+/* Dark theme GitHub link */
+[data-theme='dark'] .homepage-navbar .navbar__item--right .navbar__link {
+  color: #35b2f2 !important;
+  background: rgba(53, 178, 242, 0.1) !important;
+  text-shadow: none !important;
+  border: 1px solid rgba(53, 178, 242, 0.2) !important;
+}
+
+[data-theme='dark'] .homepage-navbar .navbar__item--right .navbar__link:hover {
+  color: var(--brand-dark-purple) !important;
+  background: #35b2f2 !important;
+  box-shadow: 0 2px 8px rgba(53, 178, 242, 0.3) !important;
+}
+
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__item--right .navbar__link {
+  color: white !important;
+  background: rgba(53, 178, 242, 0.1) !important;
+  text-shadow: none !important;
+}
+
+[data-theme='dark'] .homepage-navbar.navbar-scrolled .navbar__item--right .navbar__link:hover {
+  color: var(--brand-dark-purple) !important;
+  background: #35b2f2 !important;
+}
+
+/* Regular navbar styling (non-homepage) - ensure visibility in light mode */
+.navbar:not(.homepage-navbar) {
+  background-color: var(--ifm-navbar-background-color);
+}
+
+.navbar:not(.homepage-navbar) .navbar__link {
+  color: var(--brand-dark-purple) !important;
+}
+
+.navbar:not(.homepage-navbar) .navbar__brand {
+  color: var(--brand-dark-purple) !important;
+}
+
+.navbar:not(.homepage-navbar) .navbar__toggle {
+  color: var(--brand-dark-purple) !important;
+}
+
+/* Dark theme regular navbar */
+[data-theme='dark'] .navbar:not(.homepage-navbar) .navbar__link {
   color: var(--ifm-navbar-link-color) !important;
+}
+
+[data-theme='dark'] .navbar:not(.homepage-navbar) .navbar__brand {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+[data-theme='dark'] .navbar:not(.homepage-navbar) .navbar__toggle {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+/* Additional specificity for homepage navbar - override any conflicting styles */
+body .navbar.homepage-navbar .navbar__link {
+  color: var(--brand-dark-purple) !important;
+}
+
+body .navbar.homepage-navbar .navbar__brand {
+  color: var(--brand-dark-purple) !important;
+}
+
+body .navbar.homepage-navbar .navbar__toggle {
+  color: var(--brand-dark-purple) !important;
+}
+
+body [data-theme='dark'] .navbar.homepage-navbar .navbar__link {
+  color: #35b2f2 !important;
+}
+
+body [data-theme='dark'] .navbar.homepage-navbar .navbar__brand {
+  color: #35b2f2 !important;
+}
+
+body [data-theme='dark'] .navbar.homepage-navbar .navbar__toggle {
+  color: #35b2f2 !important;
 }
