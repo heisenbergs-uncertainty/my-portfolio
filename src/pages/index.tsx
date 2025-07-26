@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -17,8 +17,6 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const [currentRole, setCurrentRole] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const heroRef = useRef<HTMLElement>(null);
   
   const roles = [
     { text: "Dad", icon: "👨‍👧‍👦" },
@@ -26,10 +24,6 @@ function HomepageHeader() {
     { text: "DnD Enthusiast", icon: "🎲" },
     { text: "Computational Physicist", icon: "🔬" }
   ];
-
-  // Generate unique keys for particles
-  const particleKeys = Array.from({ length: 20 }, (_, i) => `particle-${i}-${Date.now()}`);
-  const elementKeys = Array.from({ length: 6 }, (_, i) => `element-${i}-${Date.now()}`);
 
   useEffect(() => {
     setIsVisible(true);
@@ -39,45 +33,12 @@ function HomepageHeader() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (heroRef.current) {
-        const rect = heroRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: (e.clientX - rect.left) / rect.width,
-          y: (e.clientY - rect.top) / rect.height,
-        });
-      }
-    };
-
-    const heroElement = heroRef.current;
-    if (heroElement) {
-      heroElement.addEventListener('mousemove', handleMouseMove);
-      return () => heroElement.removeEventListener('mousemove', handleMouseMove);
-    }
-  }, []);
-
   return (
     <header 
-      ref={heroRef}
       className={clsx("hero", styles.heroBanner, "homepage-hero-container", {
         [styles.visible]: isVisible
       })}
     >
-      <div className={styles.backgroundParticles}>
-        {particleKeys.map((key, i) => (
-          <div
-            key={key}
-            className={styles.particle}
-            style={{
-              animationDelay: `${i * 0.1}s`,
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${15 + Math.random() * 10}s`
-            }}
-          />
-        ))}
-      </div>
-      
       <div className="container">
         <div className={styles.heroContent}>
           <div className={styles.heroText}>
@@ -128,50 +89,18 @@ function HomepageHeader() {
             </div>
           </div>
           <div className={styles.heroImage}>
-            <div 
-              className={styles.interactiveArea}
-              style={{
-                transform: `translate(${mousePosition.x * 10 - 5}px, ${mousePosition.y * 10 - 5}px)`
-              }}
-            >
-              <div className={styles.floatingElements}>
-                {elementKeys.map((key, i) => (
-                  <div
-                    key={key}
-                    className={clsx(styles.floatingElement, styles[`element${i + 1}`])}
-                  />
-                ))}
+            <div className={styles.astronautContainer}>
+              <div className={styles.spaceElements}>
+                <div className={styles.star}></div>
+                <div className={styles.star}></div>
+                <div className={styles.star}></div>
+                <div className={styles.planet}></div>
               </div>
-              <div className={styles.codeSnippet}>
-                <div className={styles.codeHeader}>
-                  <div className={styles.codeDots}>
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                </div>
-                <div className={styles.codeBody}>
-                  <div className={styles.codeLine}>
-                    <span className={styles.codeKeyword}>const</span>{' '}
-                    <span className={styles.codeVariable}>passion</span>{' '}
-                    <span className={styles.codeOperator}>=</span>{' '}
-                    <span className={styles.codeString}>"solving problems"</span>
-                  </div>
-                  <div className={styles.codeLine}>
-                    <span className={styles.codeKeyword}>function</span>{' '}
-                    <span className={styles.codeFunction}>buildAmazingThings</span>
-                    <span className={styles.codeBracket}>()</span>{' '}
-                    <span className={styles.codeBracket}>{'{'}</span>
-                  </div>
-                  <div className={styles.codeLine}>
-                    &nbsp;&nbsp;<span className={styles.codeKeyword}>return</span>{' '}
-                    <span className={styles.codeString}>"innovation"</span>
-                  </div>
-                  <div className={styles.codeLine}>
-                    <span className={styles.codeBracket}>{'}'}</span>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/img/astronaut.png" 
+                alt="Cartoon astronaut floating in space" 
+                className={styles.astronautImage}
+              />
             </div>
           </div>
         </div>
@@ -233,7 +162,9 @@ export default function Home(): ReactNode {
         navbar.classList.remove('homepage-navbar', 'navbar-scrolled');
       }
     };
-  }, []);      return (
+  }, []);
+
+  return (
     <Layout
       title={`${siteConfig.title} - Developer, Dad, DnD Enthusiast & Computational Physicist`}
       description="Welcome to Matthew Holden's portfolio. I'm a passionate developer, devoted dad, D&D enthusiast, and computational physicist who loves solving complex problems and building innovative solutions."

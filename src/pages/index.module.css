@@ -5,48 +5,25 @@
 
 /* Hero Banner Styles */
 .heroBanner {
-  z-index: -1000;
-  background-image: url("/img/hero_astronaut_reversed.svg");
-  max-height: 100vh;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   margin-top: 0;
-  padding-top: 0;
-  overflow: hidden;
+  padding: 4rem 0;
   opacity: 0;
   animation: fadeIn 1s ease-out 0.2s forwards;
 }
 
 [data-theme='dark'] .heroBanner {
-  background-image: url("/img/hero_planets_dark.svg");
-}
-
-.heroBanner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(34, 167, 240, 0.1) 0%,
-    rgba(53, 178, 242, 0.05) 50%,
-    transparent 100%
-  );
-  z-index: 1;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
 }
 
 .heroBanner.visible {
-  animation: heroEntrance 2s ease-out forwards;
+  animation: heroEntrance 1.5s ease-out forwards;
 }
 
 @keyframes fadeIn {
@@ -57,7 +34,7 @@
 @keyframes heroEntrance {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
@@ -65,73 +42,24 @@
   }
 }
 
-/* Background Particles */
-.backgroundParticles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: rgba(34, 167, 240, 0.6);
-  border-radius: 50%;
-  animation: floatUp linear infinite;
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(100vh) scale(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px) scale(1);
-    opacity: 0;
-  }
-}
-
 /* Hero Content */
 .heroBanner .container {
   position: relative;
   z-index: 2;
+  max-width: 1200px;
 }
 
 .heroContent {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: space-between;
-  max-width: 100vw;
-  padding-top: 13vh;
-  
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 2rem 0;
 }
 
 /* Hero Text Styles */
 .heroText {
   text-align: left;
-  animation: slideInLeft 1s ease-out 0.5s both;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .heroIntro {
@@ -140,61 +68,33 @@
 
 .greeting {
   font-size: 1.125rem;
-  color: #22a7f0;
+  color: #ffeb3b;
   font-weight: 600;
   display: inline-block;
-  animation: wave 0.6s ease-in-out 1.2s both;
-}
-
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(20deg); }
-  75% { transform: rotate(-20deg); }
 }
 
 .heroTitle {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
   line-height: 1.2;
-  animation: slideInUp 0.8s ease-out 0.7s both;
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .nameHighlight {
-  background: linear-gradient(135deg, #22a7f0, #35b2f2, #4ecdc4);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 3s ease-in-out infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  color: #ffeb3b;
+  font-weight: 800;
 }
 
 .roleContainer {
-  height: 4rem;
+  height: 3rem;
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   gap: 0.5rem;
 }
 
 .heroSubtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0;
   display: flex;
   align-items: center;
@@ -202,44 +102,20 @@
 }
 
 .roleIcon {
-  font-size: 1.75rem;
-  animation: bounce 0.6s ease-out;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-5px); }
-  60% { transform: translateY(-3px); }
+  font-size: 1.5rem;
 }
 
 .roleText {
-  color: #22a7f0;
+  color: #ffeb3b;
   font-weight: 600;
-  position: relative;
-  animation: fadeInUp 0.6s ease-out;
-  background: linear-gradient(135deg, #22a7f0, #35b2f2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .heroDescription {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  margin-bottom: 3rem;
-  color: rgba(255, 255, 255, 0.95);
-  animation: fadeIn 0.8s ease-out 1s both;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 500px;
 }
 
 /* Hero Buttons */
@@ -247,57 +123,34 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
-  animation: fadeIn 1s ease-out 1.2s both;
+  margin-bottom: 2.5rem;
 }
 
 .heroButton {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
   font-weight: 600;
-  border-radius: 50px;
+  border-radius: 8px;
   transition: all 0.3s ease;
   text-decoration: none;
   border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-}
-
-.heroButton::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.heroButton:hover::before {
-  left: 100%;
 }
 
 .heroButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #22a7f0, #35b2f2);
-  border: 2px solid #22a7f0;
-  color: white;
+  background: #ffeb3b;
+  color: #333;
+  border: 2px solid #ffeb3b;
 }
 
 .primaryButton:hover {
-  background: linear-gradient(135deg, #1a8bc8, #2a9bd4);
-  color: white;
+  background: #fdd835;
+  color: #333;
 }
 
 .secondaryButton {
@@ -308,14 +161,13 @@
 
 .secondaryButton:hover {
   background: white;
-  color: #22a7f0;
+  color: #667eea;
 }
 
 /* Hero Stats */
 .heroStats {
   display: flex;
   gap: 2rem;
-  animation: fadeIn 1s ease-out 1.4s both;
 }
 
 .stat {
@@ -324,9 +176,9 @@
 
 .statNumber {
   display: block;
-  font-size: 2rem;
-  font-weight: 800;
-  color: #22a7f0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffeb3b;
   line-height: 1;
   margin-bottom: 0.25rem;
 }
@@ -344,333 +196,208 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: slideInRight 1s ease-out 0.8s both;
 }
 
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.interactiveArea {
+/* Astronaut Container */
+.astronautContainer {
   position: relative;
-  width: 100%;
-  height: 400px;
-  transition: transform 0.1s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: floatAstronaut 6s ease-in-out infinite;
 }
 
-.floatingElements {
+.spaceElements {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
 
-.floatingElement {
+.star {
   position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ffeb3b;
   border-radius: 50%;
-  opacity: 0.8;
-  animation: complexFloat 8s ease-in-out infinite;
+  box-shadow: 0 0 10px #ffeb3b;
+  animation: twinkle 2s ease-in-out infinite alternate;
 }
 
-.element1 {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #22a7f0, #35b2f2);
-  top: 10%;
-  left: 20%;
+.star:nth-child(1) {
+  top: 20%;
+  left: 10%;
   animation-delay: 0s;
 }
 
-.element2 {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #4ecdc4, #44a08d);
-  top: 30%;
-  right: 10%;
-  animation-delay: 1s;
-}
-
-.element3 {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #f093fb, #f5576c);
-  bottom: 40%;
-  left: 10%;
-  animation-delay: 2s;
-}
-
-.element4 {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
-  bottom: 20%;
-  right: 30%;
-  animation-delay: 3s;
-}
-
-.element5 {
-  width: 30px;
-  height: 30px;
-  background: linear-gradient(135deg, #a8edea, #fed6e3);
-  top: 60%;
-  left: 50%;
-  animation-delay: 4s;
-}
-
-.element6 {
-  width: 35px;
-  height: 35px;
-  background: linear-gradient(135deg, #d299c2, #fef9d7);
-  top: 80%;
+.star:nth-child(2) {
+  top: 15%;
   right: 20%;
-  animation-delay: 5s;
+  animation-delay: 0.7s;
 }
 
-@keyframes complexFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg) scale(1);
-  }
-  25% {
-    transform: translateY(-20px) rotate(90deg) scale(1.1);
-  }
-  50% {
-    transform: translateY(-10px) rotate(180deg) scale(0.9);
-  }
-  75% {
-    transform: translateY(-30px) rotate(270deg) scale(1.2);
-  }
+.star:nth-child(3) {
+  bottom: 25%;
+  left: 15%;
+  animation-delay: 1.4s;
 }
 
-/* Code Snippet */
-.codeSnippet {
+.planet {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(30, 30, 30, 0.95);
-  border-radius: 12px;
-  width: 280px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  animation: floatCode 6s ease-in-out infinite;
-}
-
-@keyframes floatCode {
-  0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
-  50% { transform: translate(-50%, -50%) translateY(-10px); }
-}
-
-.codeHeader {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-}
-
-.codeDots {
-  display: flex;
-  gap: 0.25rem;
-}
-
-.codeDots span {
-  width: 8px;
-  height: 8px;
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
   border-radius: 50%;
-  display: block;
+  bottom: 15%;
+  right: 10%;
+  animation: orbitSlow 20s linear infinite;
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
 }
 
-.codeDots span:nth-child(1) { background: #ff5f56; }
-.codeDots span:nth-child(2) { background: #ffbd2e; }
-.codeDots span:nth-child(3) { background: #27ca3f; }
-
-.codeBody {
-  padding: 1rem;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 0.8rem;
-  line-height: 1.4;
+.astronautImage {
+  width: 300px;
+  height: auto;
+  max-width: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+  z-index: 2;
+  position: relative;
 }
 
-.codeLine {
-  margin-bottom: 0.25rem;
+@keyframes floatAstronaut {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-15px) rotate(5deg); 
+  }
 }
 
-.codeKeyword { color: #ff79c6; }
-.codeVariable { color: #8be9fd; }
-.codeOperator { color: #ff79c6; }
-.codeString { color: #f1fa8c; }
-.codeFunction { color: #50fa7b; }
-.codeBracket { color: #f8f8f2; }
+@keyframes twinkle {
+  0% { 
+    opacity: 0.3; 
+    transform: scale(1);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1.2);
+  }
+}
 
-/* Responsive Styles */
+@keyframes orbitSlow {
+  0% { 
+    transform: rotate(0deg) translateX(20px) rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg) translateX(20px) rotate(-360deg); 
+  }
+}
 
-@media screen and (max-width: 996px) {
+/* Responsive Design */
+@media (max-width: 996px) {
   .heroContent {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
     text-align: center;
   }
   
-  .heroText {
-    text-align: center;
-    order: 1;
-  }
-
-  .heroImage {
-    order: 0;
-  }
-
   .heroTitle {
     font-size: 2.5rem;
   }
-
-  .heroSubtitle {
-    font-size: 1.25rem;
-    justify-content: center;
-  }
-  
-  .heroDescription {
-    font-size: 1.125rem;
-    margin: 0 auto 2rem;
-  }
   
   .heroButtons {
     justify-content: center;
   }
   
-  .heroButton {
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
-  }
-
   .heroStats {
     justify-content: center;
-    gap: 1.5rem;
-  }
-
-  .statNumber {
-    font-size: 1.75rem;
-  }
-  
-  .interactiveArea {
-    height: 300px;
-  }
-
-  .codeSnippet {
-    width: 240px;
-    font-size: 0.75rem;
-  }
-
-  .backgroundParticles {
-    opacity: 0.5;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .heroBanner {
-    min-height: 90vh;
+    min-height: 80vh;
     padding: 2rem 0;
   }
-
+  
   .heroTitle {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
   }
-
-  .heroSubtitle {
-    font-size: 1.125rem;
-  }
-
-  .roleIcon {
-    font-size: 1.5rem;
-  }
-
+  
   .heroDescription {
     font-size: 1rem;
-    margin-bottom: 2rem;
   }
-
+  
   .heroButtons {
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
   }
-
+  
   .heroButton {
     width: 100%;
-    max-width: 280px;
-    padding: 0.75rem 1.25rem;
+    max-width: 250px;
   }
-
+  
   .heroStats {
     gap: 1rem;
   }
-
-  .statNumber {
-    font-size: 1.5rem;
-  }
-
-  .statLabel {
-    font-size: 0.75rem;
-  }
-
-  .interactiveArea {
-    height: 250px;
-  }
-
+  
   .codeSnippet {
-    width: 200px;
-    font-size: 0.7rem;
-  }
-
-  .element1, .element2, .element3, .element4, .element5, .element6 {
-    width: 80%;
-    height: 80%;
+    width: 250px;
   }
 }
 
-/* Global Animation Classes - moved to custom.css */
-
-/* Utility Classes */
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Responsive Design */
+@media (max-width: 996px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroButtons {
+    justify-content: center;
+  }
+  
+  .heroStats {
+    justify-content: center;
+  }
 }
 
-/* Accessibility Improvements */
-@media (prefers-reduced-motion: reduce) {
-  .heroBanner,
-  .heroText,
-  .heroImage,
-  .heroTitle,
-  .heroButtons,
-  .heroStats,
-  .floatingElement,
-  .particle,
-  .codeSnippet,
-  .nameHighlight,
-  .roleIcon,
-  .roleText,
-  .heroDescription,
-  .greeting {
-    animation: none !important;
-    transition: none !important;
+@media (max-width: 768px) {
+  .heroBanner {
+    min-height: 80vh;
+    padding: 2rem 0;
   }
   
-  .interactiveArea {
-    transform: none !important;
+  .heroTitle {
+    font-size: 2rem;
   }
   
-  .heroButton::before {
-    display: none;
+  .heroDescription {
+    font-size: 1rem;
+  }
+  
+  .heroButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heroButton {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .heroStats {
+    gap: 1rem;
+  }
+  
+  .astronautImage {
+    width: 220px;
   }
 }
