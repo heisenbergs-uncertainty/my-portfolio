@@ -1,19 +1,24 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+gamedev:
+  label: Game Development
+  permalink: /gamedev
+  description: Posts about game development, Unity, and game design
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+programming:
+  label: Programming
+  permalink: /programming
+  description: Programming tutorials, tips, and best practices
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+physics:
+  label: Physics
+  permalink: /physics
+  description: Computational physics and scientific computing
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+personal:
+  label: Personal
+  permalink: /personal
+  description: Personal thoughts, experiences, and life updates
+
+tutorial:
+  label: Tutorial
+  permalink: /tutorial
+  description: Step-by-step tutorials and how-to guides
